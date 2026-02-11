@@ -42,8 +42,8 @@ The default prefix key is Ctrl + b. Press it before any shortcut below unless no
 * Prefix + ! – convert pane into a new window
 * Prefix + { – move current pane left
 * Prefix + } – move current pane right
-* Prefix + Ctrl + o – rotate pane contents clockwise
-* Prefix + Alt + o – rotate pane contents counter-clockwise
+* Prefix + Ctrl + o – rotate pane contents backwards
+* Prefix + Alt + o – rotate pane contents forwards
 * Prefix + m – mark the current pane (for use with join-pane/swap-pane)
 * Prefix + M – clear the marked pane
 * Prefix + Space – cycle through pane layouts
