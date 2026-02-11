@@ -15,6 +15,7 @@ The default prefix key is Ctrl + b. Press it before any shortcut below unless no
 * Prefix + s – list and switch between sessions
 * Prefix + ( – switch to previous session
 * Prefix + ) – switch to next session
+* Prefix + L – switch to last session
 
 ## Window (Tab) Management
 
@@ -27,6 +28,7 @@ The default prefix key is Ctrl + b. Press it before any shortcut below unless no
 * Prefix + 0-9 – switch to window by number
 * Prefix + l – toggle to last active window
 * Prefix + ' – select window by index prompt
+* Prefix + . – move/renumber current window to a new index
 
 ## Pane Management
 
@@ -40,6 +42,10 @@ The default prefix key is Ctrl + b. Press it before any shortcut below unless no
 * Prefix + ! – convert pane into a new window
 * Prefix + { – move current pane left
 * Prefix + } – move current pane right
+* Prefix + Ctrl + o – rotate pane contents clockwise
+* Prefix + Alt + o – rotate pane contents counter-clockwise
+* Prefix + m – mark the current pane (for use with join-pane/swap-pane)
+* Prefix + M – clear the marked pane
 * Prefix + Space – cycle through pane layouts
 
 ## Pane Navigation
@@ -73,6 +79,21 @@ The default prefix key is Ctrl + b. Press it before any shortcut below unless no
 * N – previous search match (in copy mode)
 * g – go to top of buffer (in copy mode)
 * G – go to bottom of buffer (in copy mode)
+* H – move to top of visible screen (in copy mode)
+* M – move to middle of visible screen (in copy mode)
+* L – move to bottom of visible screen (in copy mode)
+* w – move forward one word (in copy mode)
+* b – move backward one word (in copy mode)
+* e – move to end of word (in copy mode)
+* 0 – beginning of line (in copy mode)
+* ^ – first non-blank character of line (in copy mode)
+* $ – end of line (in copy mode)
+* Ctrl + u – half-page up (in copy mode)
+* Ctrl + d – half-page down (in copy mode)
+* Ctrl + b – full page up (in copy mode)
+* Ctrl + f – full page down (in copy mode)
+* v – start selection in vi mode (in copy mode, requires mode-keys vi)
+* y – yank/copy selection in vi mode (in copy mode, requires mode-keys vi)
 
 ## Layouts
 
@@ -90,6 +111,10 @@ The default prefix key is Ctrl + b. Press it before any shortcut below unless no
 * Prefix + : – enter command mode
 * Prefix + r – force redraw of the attached client
 * Prefix + ~ – show previous tmux messages
+* Prefix + i – display info about the current window/pane
+* Prefix + # – list all paste buffers
+* Prefix + = – choose a paste buffer interactively
+* Prefix + - – delete the most recent paste buffer
 
 ## Useful Commands (Command Mode or CLI)
 
@@ -103,3 +128,11 @@ The default prefix key is Ctrl + b. Press it before any shortcut below unless no
 * tmux capture-pane -p – print pane contents to stdout
 * tmux set -g mouse on – enable mouse support (resize panes, select windows, scroll)
 * tmux set -g mouse off – disable mouse support
+* tmux display-message -p '#S:#I.#P' – print current session:window.pane
+* tmux join-pane -s N – join pane N into the current window (opposite of !)
+* tmux break-pane -d – break pane to new window without switching to it
+* tmux resize-pane -Z – toggle zoom from command mode
+* tmux set synchronize-panes on – type in all panes simultaneously
+* tmux set synchronize-panes off – stop synchronized input
+* tmux choose-tree – interactive tree view of sessions/windows/panes
+* tmux rename-session -t old new – rename a session from CLI
